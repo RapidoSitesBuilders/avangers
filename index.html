@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>AVANGERS: Unleash the Power of Memes for Superfans - The Ultimate Meme Token for Avengers Enthusiasts</title>
+    <title>AVANGERS - Gaming Subscription Website Html Template</title>
     <!-- fontawesome css link -->
     <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
     <!-- flaticon css -->
@@ -41,8 +41,23 @@
             </div><!-- /preloader-icon -->
         </div><!-- /preloader-inner -->
     </div><!-- /preloader -->
+ <audio id="background-music" controls autoplay loop style="display: none;">
+    <source src="assets/sounds/sound.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
-    <div class="cursor"></div>
+  <script>
+    // Function to play the audio
+    function playAudio() {
+      var audio = document.getElementById("background-music");
+      audio.play();
+    }
+
+    // Add event listener to play audio when the page is clicked
+    document.addEventListener("DOMContentLoaded", function() {
+      document.body.addEventListener("click", playAudio);
+    });
+  </script>
 
     <!-- header-section start -->
     <header class="header-section">
@@ -169,29 +184,14 @@
                     </div>
                 </div>
                 <div class="col-lg-6 mb-30">
-                <div class="banner-video-area">
-                  <div class="banner-video-icon">
-                    <!-- Image with onclick event -->
-                    <a class="popup-youtube mfp-iframe" onclick="playAudio()">
-                      <img src="assets/images/banner/play.png" alt="video">
-                    </a>
-                  </div>
+                    <div class="banner-video-area">
+                        <div class="banner-video-icon">
+                            <a class="popup-youtube mfp-iframe">
+                                <img src="assets/images/banner/play.png" alt="video">
+                            </a>
+                        </div>
+                    </div>
                 </div>
-              </div>
-
-              <!-- Hidden audio element -->
-              <audio id="background-music" controls loop style="display: none;">
-                <source src="assets/sounds/sound.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-              </audio>
-
-              <script>
-                // Function to play the audio
-                function playAudio() {
-                  var audio = document.getElementById("background-music");
-                  audio.play();
-                }
-              </script>
             </div>
         </div>
     </section>
@@ -1129,6 +1129,16 @@
             normalizeFunction: 'polynomial'
         });
     });
+</script>
+
+<script> 
+    function playSound(audioName){
+        let audio = new Audio(audioName);
+        audio.loop = true
+        audio.play();
+    }
+    playSound("assets/sounds/sound.mp3");
+
 </script>
 </body>
 
