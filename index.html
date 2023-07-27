@@ -44,10 +44,6 @@
 
     <div class="cursor"></div>
 
-<audio id="background-music" autoplay loop volume="0.5">
-  <source src="assets/sounds/sound.mp3" type="audio/mpeg">
-</audio>
-
     <!-- header-section start -->
     <header class="header-section">
         <div class="header">
@@ -173,14 +169,29 @@
                     </div>
                 </div>
                 <div class="col-lg-6 mb-30">
-                    <div class="banner-video-area">
-                        <div class="banner-video-icon">
-                            <a class="popup-youtube mfp-iframe" href="https://www.youtube.com/watch?v=pOuW1dDFXxo">
-                                <img src="assets/images/banner/play.png" alt="video">
-                            </a>
-                        </div>
-                    </div>
+                <div class="banner-video-area">
+                  <div class="banner-video-icon">
+                    <!-- Image with onclick event -->
+                    <a class="popup-youtube mfp-iframe" onclick="playAudio()">
+                      <img src="assets/images/banner/play.png" alt="video">
+                    </a>
+                  </div>
                 </div>
+              </div>
+
+              <!-- Hidden audio element -->
+              <audio id="background-music" controls loop style="display: none;">
+                <source src="assets/sounds/sound.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+
+              <script>
+                // Function to play the audio
+                function playAudio() {
+                  var audio = document.getElementById("background-music");
+                  audio.play();
+                }
+              </script>
             </div>
         </div>
     </section>
@@ -1118,16 +1129,6 @@
             normalizeFunction: 'polynomial'
         });
     });
-</script>
-
-<script> 
-    document.addEventListener("DOMContentLoaded", function() {
-      var audio = document.getElementById("background-music");
-      audio.play();
-      console.log(audio)
-      console.log("I am playing")
-    });
-
 </script>
 </body>
 
