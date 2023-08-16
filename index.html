@@ -178,8 +178,17 @@
                         <h2 class="title">Discover AVENGERS Fan Token</h2>
                         <span class="sub-title">Unleash Your Superpowers in the Marvel Universe!</span>
                         <div class="banner-btn-area">
-                            <a href="#0" class="cmn-btn">Follow Us<i class="fas fa-long-arrow-alt-right"></i></a>
-                            <a href="#0" class="cmn-btn-border">Community</a>
+                            
+                                <a id="contractLink" class="cmn-btn">
+                                    <span class="copy-mobile">CA:</span>
+                                    <span class="contract-address">0xbd8543c1b9daf3e910319e9905c9b9bf7178b4ec</span>
+                                    <i id="copyIcon" class="copy-icon fas fa-copy" style="margin-left: 5px; color:white;"></i>
+                                </a>
+                            <!-- <a href="#0" class="cmn-btn">Follow Us<i class="fas fa-long-arrow-alt-right"></i></a> -->
+                            <a href="https://swap.avangers.io" class="cmn-btn">Swap<i class="fas fa-long-arrow-alt-right"></i></a>
+                            <a href="https://t.me/avangersio" class="cmn-btn-border">Community</a>
+                        </div>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -1117,6 +1126,19 @@
 <!-- main -->
 <script src="assets/js/main.js"></script>
 
+<script>
+const contractAddress = document.querySelector('.contract-address');
+    const copyIcon = document.getElementById('copyIcon');
+
+    copyIcon.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(contractAddress.textContent);
+        alert('Contract address copied to clipboard.');
+      } catch (err) {
+        console.error('Unable to copy to clipboard:', err);
+      }
+    });
+</script>
 <script>
     jQuery(document).ready(function () {
         jQuery('#vmap').vectorMap({
